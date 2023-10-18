@@ -1,29 +1,66 @@
-import { useState } from 'react'
-function Login() {
-    const [user, setuser] = useState({ email: "", password: "" })
-    const handleUser = (e) => {
-        const { name, value } = e.target;
-        setuser({
-            ...user,
-            [name]: value
-        })
-    }
+import React from 'react'
+import "./css/main.css"
+import "./css/util.css"
+import "./vendor/animate.css"
+import Image from './images/img-01.png'
+const Login = () => {
     return (
-        <div>
-            <div className='container d-flex justify-content-center align-items-center flex-column' style={{ minHeight: "100vh" }}>
-                <h2>Login</h2>
-                <form className='p-4' style={{ width: "70%", boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }} action='/user/register' method='post'>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" name='email' value={user.email} onChange={handleUser} className="form-control" autoComplete='on' id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        <div className="limiter">
+            <div className="container-login100">
+                <div className="wrap-login100">
+                    <div className="login100-pic js-tilt" data-tilt>
+                        <img src={Image} alt="IMG" />
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" className="form-control" name='password' value={user.password} onChange={handleUser} autoComplete='on' id="exampleInputPassword1" />
-                    </div>
-                    <button type="submit" className="btn btn-primary" >Login</button>
-                </form>
+
+                    <form className="login100-form validate-form">
+                        <span className="login100-form-title">
+                            Admin Login
+                        </span>
+
+                        <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input className="input100" type="text" name="email" placeholder="Email" />
+                            <span className="focus-input100"></span>
+                            <span className="symbol-input100">
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div className="wrap-input100 validate-input" data-validate="Password is required">
+                            <input className="input100" type="password" name="pass" placeholder="Password" />
+                            <span className="focus-input100"></span>
+                            <span className="symbol-input100">
+                                <i className="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div className="container-login100-form-btn">
+                            <button className="login100-form-btn">
+                                Login
+                            </button>
+                        </div>
+                        <div className="container-login100-form-btn">
+                            <button className="login100-form-btn" id='backToHomeBtn'>
+                                Back To Home
+                            </button>
+                        </div>
+
+                        {/* <div className="text-center p-t-12">
+                            <span className="txt1">
+                                Forgot
+                            </span>
+                            <a className="txt2" href="#">
+                                Username / Password?
+                            </a>
+                        </div> */}
+
+                        {/* <div className="text-center p-t-136">
+                            <a className="txt2" href="#">
+                                Create your Account
+                                <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                        </div> */}
+                    </form>
+                </div>
             </div>
         </div>
     )
