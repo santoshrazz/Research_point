@@ -6,7 +6,7 @@ import React from 'react'
 
 const Slider = () => {
     return (
-        <section className="slider_section ">
+        <section className="slider_section " style={{ backgroundColor: "#7335b7", borderRadius: "0 0 350px 0" }}>
             <div id="customCarousel1" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">

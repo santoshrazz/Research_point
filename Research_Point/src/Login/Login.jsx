@@ -38,11 +38,11 @@ const Login = () => {
                                 Login
                             </button>
                         </div>
-                        <div className="container-login100-form-btn">
+                        {/* <div className="container-login100-form-btn">
                             <button className="login100-form-btn" id='backToHomeBtn'>
                                 Back To Home
                             </button>
-                        </div>
+                        </div> */}
 
                         {/* <div className="text-center p-t-12">
                             <span className="txt1">

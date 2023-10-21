@@ -10,10 +10,7 @@ function Nav() {
 
     return (
         <>
-            <div className="hero_area">
-                <NavBarChild />
-                <Slider />
-            </div>
+            <NavBarChild />
         </>
     )
 }
