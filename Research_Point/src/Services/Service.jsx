@@ -4,6 +4,7 @@ import JobSearch from '../Images/job-searching.svg'
 import TrainTicket from '../Images/high-speed-train-front.svg'
 import mobileRecharge from '../Images/phone-ringing-1.svg'
 import PcImage from '../Images/screen-curve.svg'
+import { Link } from 'react-router-dom'
 const Service = () => {
     return (
         <section className="service_section layout_padding">
@@ -23,9 +24,9 @@ const Service = () => {
                     <Service_Card heading={"Software Installing"} image={PcImage} />
                 </div>
                 <div className="btn-box">
-                    <a href="">
+                    <Link to="/service">
                         View More
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

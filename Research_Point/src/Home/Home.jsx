@@ -9,13 +9,11 @@ import Feedback from '../Feedback/Feedback'
 const Home = () => {
     return (
         <div>
-            {/* <NavBar /> */}
             <Slider />
             <Service />
             <About />
             <CallSection />
             <Feedback />
-            <FooterMain />
         </div>
     )
 }

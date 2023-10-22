@@ -3,6 +3,7 @@ import GovtJob from '../Images/Govt_Job2.jpg'
 import KisanImage from '../Images/Kisan_Registration.png'
 import BannerImage from '../Images/Csc.jpeg'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Slider = () => {
     return (
@@ -26,9 +27,9 @@ const Slider = () => {
                                             Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <Link to="/contact" className="btn1">
                                                 Contact Us
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -52,9 +53,9 @@ const Slider = () => {
                                             Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <Link to="/contact" className="btn1">
                                                 Contact Us
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -78,9 +79,9 @@ const Slider = () => {
                                             Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
+                                            <Link to="/contact" className="btn1">
                                                 Contact Us
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

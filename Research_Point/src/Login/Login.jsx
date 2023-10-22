@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./css/main.css"
 import "./css/util.css"
 import "./vendor/animate.css"
 import Image from './images/img-01.png'
 const Login = () => {
+
+    //--------------------->    Login User Function to Login a User <------------------------
+    const loginUser = (e) => {
+        e.preventDefault();
+        // Some Basic Validations 
+        if (!(inputValue.email == "") && !(inputValue.password === "")) {
+            console.log(inputValue)
+        }
+        else {
+            console.log("All Fields are require");
+        }
+    }
+
+
+    //--------------------->    Input Change Logic <------------------------
+    const [inputValue, setInputValue] = useState({ email: "", password: "" });
+    const onInputChange = (e) => {
+        const { name, value } = e.target;
+        setInputValue({ ...inputValue, [name]: value })
+    }
     return (
         <div className="limiter">
             <div className="container-login100">
@@ -18,7 +38,7 @@ const Login = () => {
                         </span>
 
                         <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                            <input className="input100" type="text" name="email" placeholder="Email" />
+                            <input className="input100" type="text" onChange={onInputChange} name="email" value={inputValue.email} placeholder="Email" />
                             <span className="focus-input100"></span>
                             <span className="symbol-input100">
                                 <i className="fa fa-envelope" aria-hidden="true"></i>
@@ -26,7 +46,7 @@ const Login = () => {
                         </div>
 
                         <div className="wrap-input100 validate-input" data-validate="Password is required">
-                            <input className="input100" type="password" name="pass" placeholder="Password" />
+                            <input className="input100" type="password" name="password" value={inputValue.password} placeholder="Password" onChange={onInputChange} />
                             <span className="focus-input100"></span>
                             <span className="symbol-input100">
                                 <i className="fa fa-lock" aria-hidden="true"></i>
@@ -34,31 +54,10 @@ const Login = () => {
                         </div>
 
                         <div className="container-login100-form-btn">
-                            <button className="login100-form-btn">
+                            <button className="login100-form-btn" onClick={loginUser}>
                                 Login
                             </button>
                         </div>
-                        {/* <div className="container-login100-form-btn">
-                            <button className="login100-form-btn" id='backToHomeBtn'>
-                                Back To Home
-                            </button>
-                        </div> */}
-
-                        {/* <div className="text-center p-t-12">
-                            <span className="txt1">
-                                Forgot
-                            </span>
-                            <a className="txt2" href="#">
-                                Username / Password?
-                            </a>
-                        </div> */}
-
-                        {/* <div className="text-center p-t-136">
-                            <a className="txt2" href="#">
-                                Create your Account
-                                <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                            </a>
-                        </div> */}
                     </form>
                 </div>
             </div>

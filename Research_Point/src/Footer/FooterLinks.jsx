@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FooterLinks = () => {
     return (
@@ -21,18 +22,18 @@ const FooterLinks = () => {
                                 Links
                             </h4>
                             <div className="info_links">
-                                <a className="" href="index.html">
+                                <Link className="" to="/">
                                     Home
-                                </a>
-                                <a className="" href="about.html">
+                                </Link>
+                                <Link className="" to="/about">
                                     About
-                                </a>
-                                <a className="" href="service.html">
+                                </Link>
+                                <Link className="" to="/service">
                                     Services
-                                </a>
-                                <a className="" href="contact.html">
+                                </Link>
+                                <Link className="" to="/contact">
                                     Contact Us
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -53,39 +54,39 @@ const FooterLinks = () => {
                                 Address
                             </h4>
                             <div className="contact_link_box">
-                                <a href="">
+                                <Link to="">
                                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                                     <span>
                                         Location
                                     </span>
-                                </a>
-                                <a href="">
+                                </Link>
+                                <Link to="">
                                     <i className="fa fa-phone" aria-hidden="true"></i>
                                     <span>
                                         Call +01 1234567890
                                     </span>
-                                </a>
-                                <a href="">
+                                </Link>
+                                <Link to="">
                                     <i className="fa fa-envelope" aria-hidden="true"></i>
                                     <span>
                                         demo@gmail.com
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="info_social">
-                            <a href="">
+                            <Link to="">
                                 <i className="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="">
                                 <i className="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="">
                                 <i className="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
