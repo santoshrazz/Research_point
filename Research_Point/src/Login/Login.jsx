@@ -3,18 +3,24 @@ import "./css/main.css"
 import "./css/util.css"
 import "./vendor/animate.css"
 import Image from './images/img-01.png'
+import axios from 'axios'
+axios.defaults.withCredentials = true
 const Login = () => {
 
     //--------------------->    Login User Function to Login a User <------------------------
-    const loginUser = (e) => {
+    const loginUser = async (e) => {
         e.preventDefault();
         // Some Basic Validations 
         if (!(inputValue.email == "") && !(inputValue.password === "")) {
             console.log(inputValue)
+            const url = `http://localhost:8800/admin/login`
+            let value = await axios.post(url, inputValue);
+            console.log(value.data);
         }
         else {
-            console.log("All Fields are require");
+            alert("All Fields Are Require");
         }
+
     }
 
 
