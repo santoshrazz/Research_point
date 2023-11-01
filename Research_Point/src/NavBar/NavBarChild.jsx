@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import userContext from '../Context/UserContex';
 const NavBarChild = () => {
+    const contextValue = useContext(userContext);
+    // console.log(contextValue);
+    const { loginState } = useContext(userContext);
+    console.log(loginState);
+
     return (
         <header className="header_section" style={{ backgroundColor: "#7335b7" }}>
             <div className="container-fluid">
@@ -29,11 +35,17 @@ const NavBarChild = () => {
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
                         </ul>
-                        <div className="quote_btn-container">
+                        {/* Show LogOut button if user logged in or show logIn if user is not logged in */}
+                        {!loginState ? <div className="quote_btn-container">
                             <Link to="/login" className="quote_btn">
                                 Login
                             </Link>
-                        </div>
+                        </div> :
+                            <div className="quote_btn-container">
+                                <Link to="/login" className="quote_btn">
+                                    Logout
+                                </Link>
+                            </div>}
                     </div>
                 </nav>
             </div>

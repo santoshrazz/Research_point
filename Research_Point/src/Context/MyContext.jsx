@@ -1,9 +1,10 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 import userContext from './UserContex'
 const myContext = (props) => {
-    const initLoginState = "Jai Shree Ram";
+    const [loginState, setLoginState] = useState(false)
+    const normalValue = "Jai Shree Ram";
     return (
-        <userContext.Provider value={initLoginState}>
+        <userContext.Provider value={{ loginState, setLoginState }}>
             {props.children}
         </userContext.Provider>
     )

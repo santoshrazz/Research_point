@@ -12,7 +12,8 @@
   }
 
   .quote_btn-container {
-    display: none;
+    display: flex;
+    justify-content: center;
   }
 
   .custom_nav-container .navbar-nav {
