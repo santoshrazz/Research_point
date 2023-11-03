@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashBoardCard = ({ title }) => {
+const DashBoardCard = ({ title, method }) => {
     return (
         <div className="card mx-4 my-2">
             <div className="boxshadow"></div>
@@ -11,7 +11,7 @@ const DashBoardCard = ({ title }) => {
                 <div className="title">{title}</div>
                 <div className="button-container">
                     {/* <button className="button btn btn-primary">Get Job</button> */}
-                    <button className="btn button btn-primary">{title}</button>
+                    <button className="btn button btn-primary" onClick={method}>{title}  </button>
                 </div>
             </div>
         </div>

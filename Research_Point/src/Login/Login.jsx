@@ -5,9 +5,13 @@ import "./vendor/animate.css"
 import Image from './images/img-01.png'
 import axios from 'axios'
 import userContext from '../Context/UserContex'
+import { useNavigate } from 'react-router-dom'
 
 axios.defaults.withCredentials = true
 const Login = () => {
+
+    // Use Navigate Object
+    const Navigate = useNavigate();
 
     // Getting login state using useContext
     const { setLoginState } = useContext(userContext)
@@ -20,13 +24,12 @@ const Login = () => {
         e.preventDefault();
         // Some Basic Validations 
         if (!(inputValue.email == "") && !(inputValue.password === "")) {
-            console.log(inputValue)
-            const url = `http://localhost:8800/admin/login`
+            const url = `/admin/login`
             let value = await axios.post(url, inputValue);
-            console.log(value.data.login);
             if (value.data.login) {
                 setLoginState(true)
-                return
+                // Redirect To dashboard page if user admin logged In
+                Navigate("/admin/dashboard");
             }
             else {
                 setAlert(true)

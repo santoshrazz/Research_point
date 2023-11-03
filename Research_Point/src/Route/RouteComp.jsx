@@ -8,7 +8,7 @@ import Service from '../Services/Service'
 import About from '../AboutComp/About'
 import CallSection from '../CallSection/CallSection'
 import DashBoard from '../DashBoard/DashBoard'
-// import { createLogger } from 'vite'
+import PostJob from '../PostJob/PostJob'
 function RouteComp() {
     return (
         <div>
@@ -19,6 +19,7 @@ function RouteComp() {
                 <Route path='/service' element={<Service />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<CallSection />} />
+                <Route path='/admin/postjob' element={<PostJob />} />
                 <Route path='/admin/Dashboard' element={<DashBoard />} />
             </Routes>
             <FooterMain />
