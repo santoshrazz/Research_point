@@ -2,7 +2,6 @@ const jobModel = require("../model/Jobs.models")
 
 async function handlePostJob(req, res) {
     try {
-        console.log("Aa Gaya");
         const { title, desc, startDate, lastDate, noOfPost, officialLink } = req.body;
         console.log(title, desc, startDate, lastDate, noOfPost, officialLink);
         if (!title || !desc || !startDate || !lastDate || !noOfPost || !officialLink) {

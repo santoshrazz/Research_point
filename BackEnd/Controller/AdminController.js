@@ -15,7 +15,9 @@ async function loginAdmin(req, res) {
         }
         // Checking Admin Password
         if (result.password === password) {
-            const payload = { email };
+            const id = result._id;
+            console.log(id);
+            const payload = { id: id };
             const jwtToken = jwt.sign(payload, "myKeyisMyKey")
             res.cookie("uttam", jwtToken, { expire: 360000 + Date.now() })
             return res.status(200).json({ login: true, message: "Success", token: jwtToken });
@@ -24,6 +26,27 @@ async function loginAdmin(req, res) {
     } catch (error) {
         console.log(error);
         res.json({ message: "Error from catch", error });
+    }
+}
+
+async function logOut(req, res) {
+    try {
+        const id = req.id;
+        res.cookie(id, '', { expires: new Date(0), httpOnly: true });
+        res.status(200).json({ Message: "Logout SuccessFully" })
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+async function initialLogin(req, res) {
+    try {
+        const userId = req.id;
+        if (!userId) {
+            return res.status(400).json({ message: "Not Logged In" });
+        }
+        res.status(200).json({ message: "Logged in" });
+    } catch (error) {
+
     }
 }
 module.exports = { loginAdmin }

@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
+      '/job': 'http://localhost:8800',
       '/admin': 'http://localhost:8800',
     },
   },
