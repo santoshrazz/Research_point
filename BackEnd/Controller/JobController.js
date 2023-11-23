@@ -17,4 +17,15 @@ async function handlePostJob(req, res) {
         console.log(error);
     }
 }
-module.exports = handlePostJob
+async function getAllJobs(req, res) {
+    try {
+        const allJobs = await jobModel.find({});
+        if (!allJobs) {
+            return res.status(400).json({ message: "No Jobs Available" })
+        }
+        res.status(200).json({ allJobs })
+    } catch (error) {
+        console.log(error);
+    }
+}
+module.exports = { handlePostJob, getAllJobs }

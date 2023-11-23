@@ -1,10 +1,13 @@
 import MyContext from './Context/MyContext'
 import RouteComp from './Route/RouteComp'
+import { Router, Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <>
       <MyContext>
-        <RouteComp />
+        <Routes>
+          <Route path='/*' element={<RouteComp />} />
+        </Routes>
       </MyContext>
     </>
   )

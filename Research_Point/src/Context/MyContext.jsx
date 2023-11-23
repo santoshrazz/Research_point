@@ -1,15 +1,36 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import userContext from './UserContex'
+import axios from 'axios'
 const myContext = (props) => {
     const [loginState, setLoginState] = useState(false)
-    const normalValue = "Jai Shree Ram";
+
+
+
+    useEffect(() => {
+        const checkInitLogin = async () => {
+            try {
+                console.log("Working on something");
+                const url = `/admin/initLogin`;
+                const result = await axios.get(url);
+                if (result.status === 200) {
+                    setLoginState(true)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+        checkInitLogin();
+    }, [])
     const checkIfLoginOrNot = () => {
-        if (!loginState) {
-            Navigate("/login");
-            return;
+        console.log(loginState);
+        if (loginState) {
+            console.log("Login state True");
+            return null;
         }
         else {
-            return null;
+            Navigate("/login");
+            return;
         }
     }
     return (

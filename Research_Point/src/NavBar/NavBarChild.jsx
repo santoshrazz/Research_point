@@ -1,12 +1,22 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import userContext from '../Context/UserContex';
+import axios from 'axios';
 const NavBarChild = () => {
-    const contextValue = useContext(userContext);
-    // console.log(contextValue);
-    const { loginState } = useContext(userContext);
-    console.log(loginState);
 
+    const { loginState, setLoginState } = useContext(userContext);
+
+    const logOut = async () => {
+        try {
+            console.log("On Logout Function");
+            const result = await axios.get('/admin/logOut');
+            if (result.status === 200) {
+                setLoginState(false)
+            }
+        } catch (error) {
+
+        }
+    }
     return (
         <header className="header_section" style={{ backgroundColor: "#7335b7" }}>
             <div className="container-fluid">
@@ -34,16 +44,22 @@ const NavBarChild = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
+                            {
+                                loginState && <li className="nav-item">
+                                    <Link className="nav-link" to="/admin/postjob">Post Job</Link>
+                                </li>
+                            }
                         </ul>
                         {/* Show LogOut button if user logged in or show logIn if user is not logged in */}
                         {!loginState ? <div className="quote_btn-container">
-                            <Link to="/login" className="quote_btn">
+                            <Link to="/login" className="quote_btn" onClick={logOut}>
                                 Login
                             </Link>
                         </div> :
                             <div className="quote_btn-container">
-                                <Link to="/login" className="quote_btn">
-                                    Logout
+                                <button className="btn btn-danger" onClick={logOut}>LogOut</button>
+                                <Link to="/admin/dashboard" className="quote_btn mx-4">
+                                    Dashboard
                                 </Link>
                             </div>}
                     </div>

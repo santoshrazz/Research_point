@@ -32,7 +32,7 @@ async function loginAdmin(req, res) {
 async function logOut(req, res) {
     try {
         const id = req.id;
-        res.cookie(id, '', { expires: new Date(0), httpOnly: true });
+        res.cookie('uttam', '', { expires: new Date(0), httpOnly: true });
         res.status(200).json({ Message: "Logout SuccessFully" })
     } catch (error) {
         console.log(error.message);
@@ -41,6 +41,7 @@ async function logOut(req, res) {
 async function initialLogin(req, res) {
     try {
         const userId = req.id;
+        console.log("req.id is ", userId);
         if (!userId) {
             return res.status(400).json({ message: "Not Logged In" });
         }
@@ -49,4 +50,4 @@ async function initialLogin(req, res) {
 
     }
 }
-module.exports = { loginAdmin }
+module.exports = { loginAdmin, initialLogin, logOut }
