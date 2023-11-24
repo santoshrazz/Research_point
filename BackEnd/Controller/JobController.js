@@ -10,7 +10,6 @@ async function handlePostJob(req, res) {
         const result = await jobModel.create({
             title, desc, startDate, lastDate, noOfPost, officialLink
         })
-        console.log(result);
         res.status(200).json({ result })
 
     } catch (error) {

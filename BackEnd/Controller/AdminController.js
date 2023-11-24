@@ -41,7 +41,6 @@ async function logOut(req, res) {
 async function initialLogin(req, res) {
     try {
         const userId = req.id;
-        console.log("req.id is ", userId);
         if (!userId) {
             return res.status(400).json({ message: "Not Logged In" });
         }

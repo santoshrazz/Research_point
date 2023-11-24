@@ -44,6 +44,9 @@ const NavBarChild = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/allJobs">Active Job</Link>
+                            </li>
                             {
                                 loginState && <li className="nav-item">
                                     <Link className="nav-link" to="/admin/postjob">Post Job</Link>

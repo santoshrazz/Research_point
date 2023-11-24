@@ -1,6 +1,10 @@
   .card {
       border: none;
       background-color: rgb(51, 51, 51);
+
+      @media (max-width: 600px) {
+          width: 90%;
+      }
   }
 
   .card-img {
@@ -12,6 +16,7 @@
           display: flex;
           flex-flow: wrap;
           flex: 100%;
+          height: 100%;
           margin-bottom: 40px;
 
           &:nth-child(even) .card-img-body {
@@ -23,7 +28,7 @@
               padding-right: 1.25rem;
           }
 
-          @media (max-width: 576px) {
+          @media (max-width: 700px) {
               display: block;
           }
 
@@ -34,7 +39,7 @@
           overflow: hidden;
           position: relative;
 
-          @media (max-width: 576px) {
+          @media (max-width: 700px) {
               width: 100%;
               height: 200px;
               margin-bottom: 20px;
@@ -62,7 +67,7 @@
           flex: 2;
           padding: 0 0 0 1.25rem;
 
-          @media (max-width: 576px) {
+          @media (max-width: 700px) {
               padding: 0;
           }
 

@@ -14,8 +14,7 @@ function RouteComp() {
     return (
         <div>
             <NavBar />
-            <AllJobs />
-            {/* <Routes>
+            <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/login' element={<Login />} />
                 <Route exact path='/allJobs' element={<AllJobs />} />
@@ -23,8 +22,8 @@ function RouteComp() {
                 <Route exact path='/about' element={<About />} />
                 <Route exact path='/contact' element={<CallSection />} />
                 <Route exact path='/admin/postjob' element={<PostJob />} />
-                <Route exact path='/admin/dashboard' element={<DashBoard />} /> */}
-            {/* </Routes> */}
+                <Route exact path='/admin/dashboard' element={<DashBoard />} />
+            </Routes>
             <FooterMain />
         </div>
     )

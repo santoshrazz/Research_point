@@ -22,11 +22,11 @@ const AllJobs = () => {
 
     return (
         <div className='bg-secondary'>
-            <div class="container ">
-                <div class="card-group vgr-cards py-4">
+            <div className="container ">
+                <div className="card-group vgr-cards py-4">
                     {
                         jobs.map((ele) => {
-                            return <AllJobsChild title={ele.title} desc={ele.desc} startDate={ele.startDate} />
+                            return <AllJobsChild key={ele._id} title={ele.title} lastDate={ele.lastDate} desc={ele.desc} startDate={ele.startDate} officialLink={ele.officialLink} />
                         })
                     }
                 </div>

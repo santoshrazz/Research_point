@@ -1,184 +1,114 @@
-.card {
-    position: relative;
-    height: 300px;
-    width: 230px;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
-.card:nth-child(2) {
-    filter: hue-rotate(300deg) brightness(1.3);
-}
-
-.card:nth-child(3) {
-    filter: hue-rotate(200deg) brightness(1.5);
-}
-
-.card:nth-child(4) {
-    filter: hue-rotate(60deg) brightness(3);
-}
-
-.card .boxshadow {
-    position: absolute;
+html,
+body {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
-    border: 1px solid rgb(0, 217, 255);
-    transform: scale(0.8);
-    box-shadow: rgb(0, 217, 255) 0px 30px 70px 0px;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
-.card .main {
-    width: 230px;
-    height: 300px;
-    overflow: hidden;
-    background: rgb(0, 255, 149);
-    background: linear-gradient(0deg,
-            #3e0000 0%,
-            rgb(0, 247, 255) 60%,
-            #3e0000 100%);
-    position: relative;
-    clip-path: polygon(0 0,
-            100% 0,
-            100% 40px,
-            100% calc(100% - 40px),
-            calc(100% - 40px) 100%,
-            40px 100%,
-            0 calc(100% - 40px));
-    box-shadow: rgb(0, 132, 255) 0px 7px 29px 0px;
-    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-.card .main .top {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 0px;
-    height: 0px;
-    z-index: 2;
-    border-top: 115px solid black;
-    border-left: 115px solid transparent;
-    border-right: 115px solid transparent;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-.card .main .side {
-    position: absolute;
+.wrapper {
+    display: table;
+    height: 100%;
     width: 100%;
-    top: 0;
-    transform: translateX(-50%);
-    height: 101%;
-    background: black;
-    clip-path: polygon(0% 0%, 50% 0, 95% 45%, 100% 100%, 0% 100%);
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s;
 }
 
-.card .main .left {
-    left: 0;
+.container-fostrap {
+    display: table-cell;
+    padding: 1em;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.card .main .right {
-    right: 0;
-    transform: translateX(50%) scale(-1, 1);
+.fostrap-logo {
+    width: 100px;
+    margin-bottom: 15px
 }
 
-.card .main .title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 90px;
-    font-weight: bold;
-    font-size: 25px;
-    opacity: 0;
-    z-index: -1;
-    transition: all 0.2s ease-out 0s;
+h1.heading {
+    color: #fff;
+    font-size: 1.15em;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+    color: #505050;
 }
 
-.card .main .title {
-    /* font-size: 2rem; */
-    color: whitesmoke;
+@media (min-width: 450px) {
+    h1.heading {
+        font-size: 3.55em;
+    }
 }
 
-.card .main .button-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+@media (min-width: 760px) {
+    h1.heading {
+        font-size: 3.05em;
+    }
 }
 
-.card .main .button-container .button {
-    position: absolute;
-    transform: translateX(-50%);
-    padding: 5px 10px;
-    /* clip-path: polygon(0 0, 100% 0, 81% 100%, 21% 100%); */
-    background: rgb(55, 170, 216);
-    border: none;
-    color: white;
-    display: grid;
-    place-content: center;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+@media (min-width: 900px) {
+    h1.heading {
+        font-size: 3.25em;
+        margin: 0 0 0.3em;
+    }
 }
 
-.card .main .button-container .button:hover {
-    background-color: yellow;
-    color: black;
+.card {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: box-shadow .25s;
 }
 
-.card .main .button-container .button:nth-child(1) {
-    bottom: 300px;
-    transition-delay: 0.4s;
+.card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card .main .button-container .button:nth-child(2) {
-    bottom: 300px;
-    transition-delay: 0.6s;
+.img-card {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: block;
+    overflow: hidden;
 }
 
-.card .main .button-container .button:nth-child(3) {
-    bottom: 300px;
-    transition-delay: 0.8s;
+.img-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all .25s ease;
 }
 
-.card .main .button-container .button:hover .svg {
-    transform: scale(1.2);
+.card-content {
+    padding: 15px;
+    text-align: left;
 }
 
-.card .main .button-container .button:active .svg {
-    transform: scale(0.7);
+.card-title {
+    margin-top: 0px;
+    font-weight: 700;
+    font-size: 1.65em;
 }
 
-.card:hover .main {
-    transform: scale(1.1);
+.card-title a {
+    color: #000;
+    text-decoration: none !important;
 }
 
-.card:hover .main .top {
-    top: -50px;
+.card-read-more {
+    border-top: 1px solid #D4D4D4;
 }
 
-.card:hover .main .left {
-    left: -50px;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s;
-}
-
-.card:hover .main .right {
-    right: -50px;
-    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s;
-}
-
-.card:hover .main .title {
-    opacity: 1;
-    transition: all 0.2s ease-out 1.3s;
-}
-
-.card:hover .main .button-container .button:nth-child(1) {
-    bottom: 80px;
-    transition-delay: 0.8s;
-}
-
-.card:hover .main .button-container .button:nth-child(2) {
-    bottom: 40px;
-    transition-delay: 0.6s;
-}
-
-.card:hover .main .button-container .button:nth-child(3) {
-    bottom: 0;
-    transition-delay: 0.4s;
+.card-read-more a {
+    text-decoration: none !important;
+    padding: 10px;
+    font-weight: 600;
+    text-transform: uppercase
 }
