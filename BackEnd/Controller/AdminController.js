@@ -16,7 +16,6 @@ async function loginAdmin(req, res) {
         // Checking Admin Password
         if (result.password === password) {
             const id = result._id;
-            console.log(id);
             const payload = { id: id };
             const jwtToken = jwt.sign(payload, "myKeyisMyKey")
             res.cookie("uttam", jwtToken, { expire: 360000 + Date.now() })
@@ -35,6 +34,7 @@ async function logOut(req, res) {
         res.cookie('uttam', '', { expires: new Date(0), httpOnly: true });
         res.status(200).json({ Message: "Logout SuccessFully" })
     } catch (error) {
+        res.status(400).json({ message: error.message })
         console.log(error.message);
     }
 }

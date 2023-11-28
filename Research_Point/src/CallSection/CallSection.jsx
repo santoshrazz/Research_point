@@ -1,9 +1,41 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+const notify = (message) => toast(message);
 const CallSection = () => {
+
+    // --------------->  Handle input change  <----------------------------
+    const [input, setInput] = useState({ fullName: "", email: "", Mob_Number: "", message: "" })
+    const changeInput = (e) => {
+        const { name, value } = e.target;
+        setInput({ ...input, [name]: value });
+    }
+
+    // 
+    const saveCustomerDetails = async (e) => {
+        try {
+            e.preventDefault();
+            const url = `customer/saveDetails`
+            const result = await axios.post(url, input);
+            if (result.data.success) {
+                notify("Message Send SuccessFully");
+            }
+            else {
+                notify("Error While Send Message");
+            }
+        } catch (error) {
+            console.log("Error at CallSection Component", error);
+            notify(error.response.data.message);
+        }
+
+    }
     return (
         <section className="contact_section layout_padding">
             <div className="container-fluid">
+                <ToastContainer />
                 <div className="row">
                     <div className="col-md-5 col-lg-4 offset-md-1">
                         <div className="form_container">
@@ -12,18 +44,18 @@ const CallSection = () => {
                                     Request A Call back
                                 </h2>
                             </div>
-                            <form action="">
+                            <form action="" onSubmit={saveCustomerDetails}>
                                 <div>
-                                    <input type="text" placeholder="Full Name " />
+                                    <input type="text" onChange={changeInput} placeholder="Full Name " name='fullName' value={input.fullName} />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="email" onChange={changeInput} placeholder="Email" name='email' value={input.email} />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Phone number" />
+                                    <input type="text" onChange={changeInput} placeholder="Phone number" name='Mob_Number' value={input.Mob_Number} />
                                 </div>
                                 <div>
-                                    <input type="text" className="message-box" placeholder="Message" />
+                                    <input type="text" onChange={changeInput} className="message-box" placeholder="Message" name='message' value={input.message} />
                                 </div>
                                 <div className="d-flex ">
                                     <button>

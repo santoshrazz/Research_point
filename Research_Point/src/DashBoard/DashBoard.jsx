@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import './Card.css'
+// import userContext from '../../Context/UserContex'
 import userContext from '../Context/UserContex'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import GmailImage from './Gmail_Image.png'
 import ContactImage from './Contact.png'
+import PostJobImage from './Post_Job.jpg'
 const DashBoard = () => {
 
     //useNavigate Object 
@@ -17,9 +19,6 @@ const DashBoard = () => {
     }, [])
 
     // ----------------->   Logic For Post job Button   <-----------------------
-    const postJobMethod = () => {
-        Navigate('/admin/postjob');
-    }
     return (
         <div className='bg-primary-subtle' style={{ minHeight: "88vh" }}>
             <section class="wrapper">
@@ -35,57 +34,53 @@ const DashBoard = () => {
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4">
                                     <div class="card">
-                                        <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                        <Link class="img-card link" to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
                                             <img src={GmailImage} />
-                                        </a>
+                                        </Link>
                                         <div class="card-content">
                                             <p class="">
-                                                Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
+                                                Get Your All Subscribed Email From Here
                                             </p>
                                         </div>
                                         <div class="card-read-more">
-                                            <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
-                                                Read More
-                                            </a>
+                                            <Link to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn link btn-link btn-block">
+                                                Get Emails
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4">
                                     <div class="card">
-                                        <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                        <Link class="img-card link" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
                                             <img src={ContactImage} />
-                                        </a>
+                                        </Link>
                                         <div class="card-content">
 
                                             <p class="">
-                                                Material Design is a visual programming language made by Google. Language programming...
+                                                Get Your All Customers Contact From Here
                                             </p>
                                         </div>
                                         <div class="card-read-more">
-                                            <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                                Read More
-                                            </a>
+                                            <Link to="/customer/viewCustomer" class="btn btn-link btn-block">
+                                                Get Contact
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4">
                                     <div class="card">
-                                        <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                            <img src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
-                                        </a>
+                                        <Link class="img-card" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                            <img src={PostJobImage} />
+                                        </Link>
                                         <div class="card-content">
-                                            <h4 class="card-title">
-                                                <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5  Button Hover Animation Effects
-                                                </a>
-                                            </h4>
                                             <p class="">
-                                                tutorials button hover animation, although very much a hover button is very beauti...
+                                                Post Your Desire Job From Here
                                             </p>
                                         </div>
                                         <div class="card-read-more">
-                                            <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html" class="btn btn-link btn-block">
-                                                Read More
-                                            </a>
+                                            <Link className='btn btn-link btn-block' to="/admin/postjob">
+                                                Post Job
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

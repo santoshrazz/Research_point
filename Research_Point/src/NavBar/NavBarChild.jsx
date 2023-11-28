@@ -47,11 +47,6 @@ const NavBarChild = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/allJobs">Active Job</Link>
                             </li>
-                            {
-                                loginState && <li className="nav-item">
-                                    <Link className="nav-link" to="/admin/postjob">Post Job</Link>
-                                </li>
-                            }
                         </ul>
                         {/* Show LogOut button if user logged in or show logIn if user is not logged in */}
                         {!loginState ? <div className="quote_btn-container">

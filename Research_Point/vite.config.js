@@ -7,6 +7,7 @@ export default defineConfig({
     proxy: {
       '/job': 'http://localhost:8800',
       '/admin': 'http://localhost:8800',
+      '/customer': 'http://localhost:8800',
     },
   },
   plugins: [react()],
