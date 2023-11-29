@@ -7,10 +7,8 @@ const View_Customers = () => {
     const [result, setResult] = useState([])
     const fetchCustomers = async () => {
         try {
-            const url = `customer/getDetails`
-            console.log("in Function");
+            const url = `/customer/getDetails`
             const result = await axios.get(url);
-            console.log("I am after result");
             console.log(result);
             setResult(result.data.User);
         } catch (error) {
@@ -26,7 +24,7 @@ const View_Customers = () => {
                 <div className="row">
                     {
                         result.map((ele) => {
-                            return <View_Customers_Child fullName={ele.fullName} key={ele._id} email={ele.email} Mob_Number={ele.Mob_Number} message={ele.message} />
+                            return <View_Customers_Child fullName={ele.fullName} key={ele._id} email={ele.email} Mob_Number={ele.Mob_Number} message={ele.message} id={ele._id} />
                         })
                     }
                 </div>

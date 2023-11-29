@@ -21,63 +21,63 @@ const DashBoard = () => {
     // ----------------->   Logic For Post job Button   <-----------------------
     return (
         <div className='bg-primary-subtle' style={{ minHeight: "88vh" }}>
-            <section class="wrapper">
-                <div class="container-fostrap">
+            <section className="wrapper">
+                <div className="container-fostrap">
                     <div>
-                        <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo" />
-                        <h1 class="heading">
+                        <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" className="fostrap-logo" />
+                        <h1 className="heading">
                             Welcome Uttam Kumar
                         </h1>
                     </div>
-                    <div class="content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="card">
-                                        <Link class="img-card link" to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                    <div className="content">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-4">
+                                    <div className="card">
+                                        <Link className="img-card link" to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
                                             <img src={GmailImage} />
                                         </Link>
-                                        <div class="card-content">
-                                            <p class="">
+                                        <div className="card-content">
+                                            <p className="">
                                                 Get Your All Subscribed Email From Here
                                             </p>
                                         </div>
-                                        <div class="card-read-more">
-                                            <Link to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn link btn-link btn-block">
+                                        <div className="card-read-more">
+                                            <Link to="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn link btn-link btn-block">
                                                 Get Emails
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="card">
-                                        <Link class="img-card link" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                <div className="col-xs-12 col-sm-4">
+                                    <div className="card">
+                                        <Link className="img-card link" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
                                             <img src={ContactImage} />
                                         </Link>
-                                        <div class="card-content">
+                                        <div className="card-content">
 
-                                            <p class="">
+                                            <p className="">
                                                 Get Your All Customers Contact From Here
                                             </p>
                                         </div>
-                                        <div class="card-read-more">
-                                            <Link to="/customer/viewCustomer" class="btn btn-link btn-block">
+                                        <div className="card-read-more">
+                                            <Link to="/customer/viewCustomer" className="btn btn-link btn-block">
                                                 Get Contact
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="card">
-                                        <Link class="img-card" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                <div className="col-xs-12 col-sm-4">
+                                    <div className="card">
+                                        <Link className="img-card" to="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
                                             <img src={PostJobImage} />
                                         </Link>
-                                        <div class="card-content">
-                                            <p class="">
+                                        <div className="card-content">
+                                            <p className="">
                                                 Post Your Desire Job From Here
                                             </p>
                                         </div>
-                                        <div class="card-read-more">
+                                        <div className="card-read-more">
                                             <Link className='btn btn-link btn-block' to="/admin/postjob">
                                                 Post Job
                                             </Link>

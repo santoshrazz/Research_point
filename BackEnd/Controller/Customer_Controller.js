@@ -22,7 +22,6 @@ async function saveCustomer(req, res, next) {
 
 async function getCustomer(req, res, next) {
     try {
-        console.log("aa Gaya request");
         const result = await customerModel.find({});
         if (!result) {
             return res.status(400).json({ message: "Can't find data in DB", success: false });
@@ -35,4 +34,19 @@ async function getCustomer(req, res, next) {
 
     }
 }
-module.exports = { saveCustomer, getCustomer }
+async function deleteCustomer(req, res, next) {
+    try {
+        const _id = req.params.id;
+        const result = await customerModel.deleteOne({ _id });
+        if (!result) {
+            return res.status(400).json({ message: "Can't Delete data in DB", success: false });
+        }
+        res.status(200).json({
+            User: result,
+            success: true
+        })
+    } catch (error) {
+
+    }
+}
+module.exports = { saveCustomer, getCustomer, deleteCustomer }

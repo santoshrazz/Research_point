@@ -19,7 +19,7 @@ const AllJobsChild = (props) => {
                 <img className="card-img" src={jobImage} alt="Card image cap" />
             </div>
             <div className="card-body">
-                <h4 className="card-title text-white text-center mt-2">{props.title}</h4>
+                <h4 className="card-title  text-center mt-2">{props.title}</h4>
                 <p className="card-text text-danger px-4 fs-5">{props.desc}</p>
                 <div className='text-primary px-4'><h2>Start Date : <span>{formateDate(props.startDate)}</span></h2></div>
                 <div className='text-primary px-4'><h2>Last Date : <span>{formateDate(props.lastDate)}</span></h2></div>
