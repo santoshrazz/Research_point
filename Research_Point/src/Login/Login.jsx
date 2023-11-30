@@ -36,7 +36,7 @@ const Login = () => {
             }
         }
         else {
-            alert("All Fields Are Require");
+            setAlert("All Fields Are Require");
         }
 
     }

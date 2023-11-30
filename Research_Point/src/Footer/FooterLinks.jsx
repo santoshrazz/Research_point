@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const FooterLinks = () => {
+    const [inputValue, setInputValue] = useState("")
+    const changeInput = (e) => {
+        const value = e.target.value;
+        setInputValue(value)
+    }
     return (
         <section className="info_section ">
             <div className="container">
@@ -42,7 +47,7 @@ const FooterLinks = () => {
                             Subscribe
                         </h4>
                         <form action="#">
-                            <input type="text" placeholder="Enter email" />
+                            <input type="text" value={inputValue} onChange={changeInput} placeholder="Enter email" />
                             <button type="submit">
                                 Subscribe
                             </button>
