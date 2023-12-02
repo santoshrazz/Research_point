@@ -1,25 +1,10 @@
 const mongoose = require("mongoose");
-
-const customer_Schema = mongoose.Schema({
-    fullName: {
-        type: String,
-        require: true,
-    },
+const emailSchema = mongoose.Schema({
     email: {
         type: String,
         require: true,
-        unique: true
-    },
-    Mob_Number: {
-        type: String,
-        require: true,
-        unique: true
-    },
-    message: {
-        type: String,
-        require: true,
-    },
+    }
 })
 
-const emailModel = mongoose.model("customer", customer_Schema)
+const emailModel = mongoose.model("email", emailSchema);
 module.exports = emailModel;

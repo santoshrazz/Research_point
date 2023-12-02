@@ -1,14 +1,38 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const FooterLinks = () => {
+
+    // Notify Object 
+
+    const notify = (message) => toast(message);
+
+
+    // Logic For Change email input field
     const [inputValue, setInputValue] = useState("")
     const changeInput = (e) => {
         const value = e.target.value;
         setInputValue(value)
     }
+
+    const saveEmail = async (e) => {
+        try {
+            e.preventDefault();
+            const url = `/customer/saveEmail`;
+            console.log(inputValue);
+            console.log(url);
+            const result = await axios.post(url, { email: inputValue });
+            notify(result.data.message)
+        } catch (error) {
+            console.log(error);
+            notify(error.response.data.message)
+        }
+    }
     return (
         <section className="info_section ">
+            <ToastContainer />
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-lg-3 ">
@@ -48,7 +72,7 @@ const FooterLinks = () => {
                         </h4>
                         <form action="#">
                             <input type="text" value={inputValue} onChange={changeInput} placeholder="Enter email" />
-                            <button type="submit">
+                            <button type="submit" onClick={saveEmail}>
                                 Subscribe
                             </button>
                         </form>
