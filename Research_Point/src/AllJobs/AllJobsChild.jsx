@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import jobImage from './Govt_job.png'
+import userContext from '../Context/UserContex';
 const AllJobsChild = (props) => {
     const formateDate = (dateString) => {
         const date = new Date(dateString);
@@ -13,6 +14,7 @@ const AllJobsChild = (props) => {
         return formattedDate
 
     }
+    const { checkIfLoginOrNot, loginState } = useContext(userContext);
     return (
         <div className="card">
             <div className="card-img-body">
@@ -24,6 +26,9 @@ const AllJobsChild = (props) => {
                 <div className='text-primary px-4'><h2>Start Date : <span>{formateDate(props.startDate)}</span></h2></div>
                 <div className='text-primary px-4'><h2>Last Date : <span>{formateDate(props.lastDate)}</span></h2></div>
                 <a href={props.officialLink} target='_blank' className="btn btn-primary text-center mx-4">Apply</a>
+                {
+                    loginState && <a href={props.officialLink} target='_blank' className="btn btn-primary text-center mx-4">Delete Job</a>
+                }
             </div>
         </div>
     )

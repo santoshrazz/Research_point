@@ -44,7 +44,7 @@ async function initialLogin(req, res) {
         if (!userId) {
             return res.status(400).json({ message: "Not Logged In" });
         }
-        res.status(200).json({ message: "Logged in" });
+        res.status(200).json({ message: "Logged in", login: true });
     } catch (error) {
 
     }

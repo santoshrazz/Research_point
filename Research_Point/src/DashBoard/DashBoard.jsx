@@ -12,17 +12,13 @@ const DashBoard = () => {
     const Navigate = useNavigate();
     // Getting loginState using useContext
     const { checkIfLoginOrNot, loginState } = useContext(userContext);
-
     // Check if user is logged in or not if not than redirect ot login page
+
     useEffect(() => {
-        if (loginState) {
-            console.log("Turu");
-        }
-        else {
-            console.log("NOt TuRu");
+        if (!loginState) {
+            Navigate("/login")
         }
     }, [])
-
     // ----------------->   Logic For Post job Button   <-----------------------
     return (
         <div className='bg-primary-subtle' style={{ minHeight: "88vh" }}>

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import userContext from '../Context/UserContex';
 import axios from 'axios';
 const NavBarChild = () => {
 
     const { loginState, setLoginState } = useContext(userContext);
-
+    const location = useLocation();
+    const { pathname } = location;
     const logOut = async () => {
         try {
             console.log("On Logout Function");
@@ -32,19 +33,19 @@ const NavBarChild = () => {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav  ">
-                            <li className="nav-item active">
+                            <li className={`nav-item ${pathname == "/" ? "active" : ""}`}>
                                 <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={`nav-item ${pathname == "/about" ? "active" : ""}`}>
                                 <Link className="nav-link" to="/about"> About</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={`nav-item ${pathname == "/service" ? "active" : ""}`}>
                                 <Link className="nav-link" to="/service">Services</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={`nav-item ${pathname == "/contact" ? "active" : ""}`}>
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className={`nav-item ${pathname == "/allJobs" ? "active" : ""}`}>
                                 <Link className="nav-link" to="/allJobs">Active Job</Link>
                             </li>
                         </ul>
