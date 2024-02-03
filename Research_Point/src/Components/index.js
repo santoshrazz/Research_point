@@ -1,0 +1,11 @@
+export { default as About } from "./AboutComp/About";
+export { default as AllJobs } from "./AllJobs/AllJobs";
+export { default as CallSection } from "./CallSection/CallSection";
+export { default as DashBoard } from "./DashBoard/DashBoard";
+export { default as Home } from "./Home/Home";
+export { default as Layout } from "./Layout/Layout";
+export { default as Loader } from "./Loader/Loader";
+export { default as Login } from "./Login/Login";
+export { default as PostJob } from "./PostJob/PostJob";
+export { default as Service } from "./Services/Service";
+export { default as View_Customers } from "./View_Customers/View_Customers";
